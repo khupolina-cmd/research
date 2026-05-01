@@ -40,6 +40,16 @@ Example:
 
 Do not pretend to be grounded if you have not opened the files yet.
 
+After opening `AGENTS.md`, explicitly declare the domain mode before selecting further sources:
+
+- Academic / scientific
+- Market / business
+- Visual / creative / trend
+- Mixed
+
+This determines which track of [references/source-touch-order.md](references/source-touch-order.md) applies.
+Do not select source files before the domain mode is fixed.
+
 ### 2. Extract only the active theses
 
 Do not re-dump the whole methodology.
@@ -130,7 +140,13 @@ For manual web search, reference retrieval, inspiration hunting, or corpus build
 
 ### 6. For visual / creative tasks, ask anti-failure questions first
 
-Prioritize:
+Before asking any anti-failure questions, lock the output object:
+
+- state explicitly which object class the user is asking for (surfaces / tags / makers / proof pages / cases / field map);
+- do not proceed to anti-failure questions with an undecided output object;
+- if the object is still ambiguous, ask one short discriminative question first.
+
+Then prioritize:
 
 1. what obvious junk must be excluded;
 2. what counts as valid proof;

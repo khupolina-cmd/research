@@ -50,6 +50,7 @@ Open:
 2. `manual-web-search-system.md`
 3. local atlas / registry if present
 4. `output-object-routing.md`
+5. `prompt-templates.md`
 
 In this project, the atlas layer includes:
 
