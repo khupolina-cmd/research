@@ -54,7 +54,7 @@ Open:
 
 In this project, the atlas layer includes:
 
-- approved anchors / whitelist;
+- approved anchors / whitelist — note the two-layer structure in `approved-anchors.md`: Layer 1 taste-anchors (tone only) and Layer 2 target-resource surfaces (visual/commercial retrieval). In visual/commercial mode, require at least 2 Layer 2 surfaces;
 - blacklist;
 - anti-query patterns;
 - prompt blocks and prior failed branches.

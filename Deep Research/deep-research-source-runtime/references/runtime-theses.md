@@ -177,3 +177,34 @@ Stricter rule:
 - a kept resource surface should itself behave like a repeatable browseable reservoir of the target object;
 - if the fit only becomes visible after hopping through scattered case pages, that is a discovery node, not the requested final resource;
 - discovery nodes may be useful, but they must be labeled as secondary and must not replace the resource table the user asked for.
+
+## 14. Freshness gate for visual / creative / trend tasks
+
+A source is not accepted into the final list for a visual/creative/trend task unless its activity in 2024–2026 is confirmed.
+
+Check for:
+
+- publication date of the specific page or work being cited;
+- evidence that the surface itself is actively updated (recent posts, dated entries, current campaign coverage).
+
+If the date cannot be verified:
+
+- mark the source as `unverified for freshness`;
+- move it to a secondary layer, not the main deliverable;
+- do not silently include it as if it were current.
+
+Do not satisfy a freshness requirement by citing the domain name only. A surface that was strong in 2020 but has not been updated since is not a current source.
+
+## 15. Positive specification for on-brief visual/commercial work
+
+Thesis 6 says what to reject. This thesis says what to accept.
+
+A result qualifies as on-brief for a visual/commercial reference task if it shows:
+
+- **Visible editorial decision**: composition, type treatment, color, or cropping that is clearly authored, not templated or AI-mocked;
+- **Real client + real brief**: not a self-initiated studio concept, not a student project, not a spec piece, unless the user explicitly said those are acceptable;
+- **Published on a professional surface**: not a Pinterest repin, not a mood board aggregate, not an uncredited stock collection;
+- **If product visual**: typography or compositional structure must be visible in frame — not just attractive product photography without design intent;
+- **Stylistic currency**: the work should read as 2023–2026 in visual language; work that reads as dated e-commerce, 2015-era collage, or generic luxury safe is not on-brief even if the object class is correct.
+
+A result that satisfies object class but fails on authorship, publication provenance, or stylistic currency is a partial match at best. Label it as such; do not present it as a full hit.

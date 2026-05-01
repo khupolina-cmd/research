@@ -273,3 +273,80 @@ But audit is still useful when:
 - prompts from different runs start converging to the same stale shape;
 - the user suspects the assistant is falling back to memory;
 - the result looks polished but suspiciously generic.
+
+## 4. Visual / Commercial Reference Prompt
+
+Use this when the user wants:
+
+- visual references for a commercial or product brief;
+- trend-forward work examples with editorial and authorship quality;
+- surface or corpus collection in visual/creative/commercial mode.
+
+This template has freshness, source-layer, and quality-floor requirements pre-loaded. Do not remove them.
+
+### Pre-flight check (run before writing the prompt)
+
+- [ ] Output object locked (surfaces / tags / makers / proof pages / cases / field map)
+- [ ] Domain mode declared: visual/commercial
+- [ ] At least 2 target-resource surfaces from Layer 2 of `approved-anchors.md` are in the source list
+- [ ] Freshness constraint active (2024–2026 unless user specifies otherwise)
+- [ ] Style quality floor stated
+
+If any box is unchecked, fix it before writing the prompt body.
+
+### Recommended structure
+
+```text
+Task:
+[one sentence: what visual/commercial object to find]
+
+Object lock:
+[exact output object class: surfaces / tags / makers / proof pages / cases]
+
+Goal:
+[decision or use context — what this corpus feeds into]
+
+Primary quality rule:
+Real authored commercial work, published 2024–2026, visible editorial decision in frame.
+Not: templates, AI mocks, self-initiated concepts, Pinterest repins, uncredited aggregates.
+
+Source layer (minimum 2 from target-resource surfaces):
+- [surface 1 from Layer 2 of approved-anchors.md]
+- [surface 2 from Layer 2 of approved-anchors.md]
+- [taste-anchors if needed for tone calibration only — label them as such]
+
+Freshness gate:
+- Accept: page or work has confirmed 2024–2026 publication or activity date.
+- Mark as unverified: date not visible or not confirmable.
+- Reject: last active before 2023 unless user explicitly allows archival material.
+
+Exclude:
+- [from rejected-surfaces-and-antiqueries.md — list relevant ones explicitly]
+- dated-looking work (pre-2022 visual language)
+- template / AI-mock / prompt-marketplace results
+- generic platform search pages as deliverables
+
+Style quality floor:
+[state what "current and non-generic" means for this brief, e.g.: "editorial typography visible, not just nice product photo", "2025-era layout logic, not 2015 e-commerce grid"]
+
+What to return:
+1. [primary output object — surfaces / tags / makers / proof pages / cases]
+2. Freshness status for each result (confirmed / unverified)
+3. Why each result qualifies (object match + authorship + stylistic currency)
+4. What signal is weak or missing
+
+Anti-surface check:
+- No results from rejected-surfaces-and-antiqueries.md
+- No generic platform search pages substituted for direct resources
+- No taste-anchors substituted for target-resource surfaces in the main deliverable
+```
+
+### Common failure modes for this template
+
+| Failure | Signal | Fix |
+|---------|--------|-----|
+| Taste-anchors used as primary deliverable | Awwwards / Cosmos in the main result table | Move to secondary; add Layer 2 surface |
+| Freshness not checked | No dates, vague "recent" language | Force date verification per source |
+| Object substitution | Asked for sites, returned cases | Re-lock output object, rewrite What to return |
+| Style floor not enforced | Dated-looking or template-like results passed through | Apply Thesis 15 markers explicitly |
+| Behance used as standalone answer | "Search Behance for X" | Demote to secondary corroboration with specific query |

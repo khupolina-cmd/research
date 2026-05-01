@@ -25,7 +25,7 @@ If you have not touched the relevant local sources in this turn, you are not rea
 Use [references/source-touch-order.md](references/source-touch-order.md) to decide which files to open.
 Use [references/runtime-theses.md](references/runtime-theses.md) to pull only the relevant rules instead of dragging the whole project into the answer.
 Use [references/output-object-routing.md](references/output-object-routing.md) to lock the output object before drafting the prompt.
-Use [references/approved-anchors.md](references/approved-anchors.md) and [references/rejected-surfaces-and-antiqueries.md](references/rejected-surfaces-and-antiqueries.md) as live allow/deny layers when the task is reference hunting.
+Use [references/approved-anchors.md](references/approved-anchors.md) as a two-layer allow surface: **Layer 1 taste-anchors** for tone calibration, **Layer 2 target-resource surfaces** for visual/commercial retrieval. In visual/commercial mode, require at least 2 Layer 2 surfaces before finalizing. Use [references/rejected-surfaces-and-antiqueries.md](references/rejected-surfaces-and-antiqueries.md) as the hard deny layer.
 Use [references/prompt-templates.md](references/prompt-templates.md) to choose the right prompt shape instead of improvising the structure from scratch.
 
 ## What to do in a turn
