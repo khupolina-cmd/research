@@ -2,92 +2,72 @@
 
 These are user-approved surfaces in the Deep Research project.
 
-Use them as positive anchors, not as mandatory answers.
+They are split into two layers with different roles. Using the wrong layer for a task is a routing failure.
 
-If the task is reference hunting or source mapping, these surfaces may be used as:
+## Layer 1 — Taste-anchors
 
-- seed ecosystems;
-- taste anchors;
-- comparison baselines;
-- trusted starting points for adjacent discovery.
+Use for: tone calibration, adjacent signal discovery, creative radar.
 
-They are not automatically:
+Do **not** use as primary deliverable sources for visual/commercial/product tasks.
+They are style references, not product-commercial retrieval surfaces.
 
-- proof-bearing pages
-- commercial source-of-origin pages
-- substitutes for the user’s requested output object
+| # | Surface | URL | Best use |
+|---|---------|-----|----------|
+| 1 | Graphic Archive | `https://www.graphic-archive.com/` | Expressive typography, layered graphic fragments, visual lead generation |
+| 2 | Minimal Gallery | `https://minimal.gallery/` | Restrained layout language, cleaner headline systems, calmer digital composition |
+| 3 | Httpster | `https://httpster.net/` | Typographic web, cultural/portfolio surfaces, quieter visual language |
+| 4 | Godly | `https://godly.website/` | Fresh digital taste, bold landing structures, current headline behavior |
+| 5 | Cosmos | `https://www.cosmos.so/` | Visual neighborhoods, expansion from a seed, cross-category discovery |
+| 6 | Awwwards | `https://www.awwwards.com/` | Selective high-end web craft and expressive digital references |
+| 7 | Another Graphic | `https://anothergraphic.org/` | Typographic treatment, poster-like fragments, covers, text behavior |
+| 8 | It's Nice That — Nicer Tuesdays | `https://www.itsnicethat.com/nicer-tuesdays` | Fresh practitioners, adjacent leads, current creative signal |
+| 9 | The Casual Optimist | `https://www.casualoptimist.com/` | Book-cover and publishing field references, print-culture text-image compositions |
 
-## Approved list
+## Layer 2 — Target-resource surfaces
 
-### 1. Graphic Archive
-- URL: `https://www.graphic-archive.com/`
-- Why approved: user explicitly marked it as a real hit rather than noise.
-- Best use: expressive typography, layered graphic fragments, visual lead generation.
+Use for: visual/commercial/product reference hunts, surface mapping, corpus collection.
 
-### 2. Minimal Gallery
-- URL: `https://minimal.gallery/`
-- Why approved: useful clean digital reference surface, not dismissed as generic sludge.
-- Best use: restrained layout language, cleaner headline systems, calmer digital composition.
+In visual/commercial mode, do not deliver a final result unless at least 2 on-brief surfaces from this layer were consulted and returned usable signal. If fewer than 2 fire, note the gap explicitly instead of padding with taste-anchors.
 
-### 3. Httpster
-- URL: `https://httpster.net/`
-- Why approved: accepted as a useful hand-picked web surface.
-- Best use: typographic web, cultural/portfolio surfaces, quieter visual language.
+| # | Surface | URL | Best use | Notes |
+|---|---------|-----|----------|-------|
+| 1 | World Brand Design | `https://worldbranddesign.com/` | Product-facing branding, packaging-led visual systems, smaller studios, adjacent product-poster discovery | Primary |
+| 2 | The Dieline | `https://thedieline.com/` | Packaging-led product worlds, CPG/beauty/food/drink systems, adjacent product-led campaign discovery | Primary |
+| 3 | Lovely Package | `https://lovelypackage.com/` | Packaging design, consumer product visual systems, CPG brand identity in context | Primary |
+| 4 | Design Week (UK) | `https://www.designweek.co.uk/` | Product/brand commercial work from UK and international studios, industry-grounded not trend-blog | Primary |
+| 5 | It's Nice That — Commissions | `https://www.itsnicethat.com/commissions` | Commissioned real-client work with editorial framing; distinct from Nicer Tuesdays | Primary |
+| 6 | Packaging Digest | `https://www.packagingdigest.com/` | CPG/product statics, packaging trends, industry-facing coverage | Secondary: for CPG/FMCG briefs specifically |
+| 7 | Behance (query-constrained only) | `https://www.behance.net/` | Corroboration of surface hits, vocabulary drift check, studio discovery when query is tight | Secondary: never use as a standalone answer; always pair with specific query |
 
-### 4. Godly
-- URL: `https://godly.website/`
-- Why approved: accepted as a strong current expressive web signal.
-- Best use: fresh digital taste, bold landing structures, current headline behavior.
+### Award entry surfaces (secondary only)
 
-### 5. Cosmos
-- URL: `https://www.cosmos.so/`
-- Why approved: core discovery anchor and one of the starting points of the whole project.
-- Best use: visual neighborhoods, expansion from a seed, cross-category discovery.
+Use as dated entry points into verified current-year commercial work. Always follow credits through to primary Layer 2 surfaces (The Dieline, Design Week, studio pages) — do not use award gallery pages as the final deliverable.
 
-### 6. Awwwards
-- URL: `https://www.awwwards.com/`
-- Why approved: user explicitly kept it despite earlier caution.
-- Best use: selective high-end web craft and expressive digital references.
+**Segment caveat applies**: award shortlists skew heavily toward luxury and prestige brands. For mid-market briefs, filter by product category within the award and prefer shortlists over grand prix winners. See Thesis 18 for the full rule.
 
-### 7. Another Graphic
-- URL: `https://anothergraphic.org/`
-- Why approved: one of the clearest matches for the user’s taste and search logic.
-- Best use: typographic treatment, poster-like fragments, covers, text behavior.
+| # | Surface | URL | Segment caveat |
+|---|---------|-----|----------------|
+| A1 | D&AD Professional Awards | `https://www.dandad.org/en/d-ad-professional-awards/` | Luxury skew at winner level; shortlists show wider commercial range |
+| A2 | Red Dot (Communication Design) | `https://www.red-dot.org/project/` | Filter by category; wider segment range than D&AD |
+| A3 | Epica Awards | `https://www.epica-awards.com/` | European-weighted; stronger mid-market representation |
+| A4 | Clio Awards | `https://clios.com/awards/` | US/global; wider segment range than Cannes Lions |
 
-### 8. It’s Nice That — Nicer Tuesdays
-- URL: `https://www.itsnicethat.com/nicer-tuesdays`
-- Why approved: kept as a living creative radar rather than a generic blog surface.
-- Best use: fresh practitioners, adjacent leads, current creative signal.
+### Instagram publisher nodes
 
-### 9. The Casual Optimist
-- URL: `https://www.casualoptimist.com/`
-- Why approved: one of the few sources that at least moved closer to the desired text+photo territory.
-- Best use: book-cover and publishing field references, print-culture text-image compositions.
+Use these as publisher nodes, not as platform search. Do not substitute with "search Instagram for X."
 
-### 10. World Brand Design
-- URL: `https://worldbranddesign.com/`
-- Why approved: user explicitly called it a large useful branding/product surface that should not have been omitted.
-- Best use: product-facing branding, packaging-led visual systems, smaller studios, adjacent product-poster discovery.
+Add validated accounts here as they are discovered and approved in the project thread. Until a specific account is listed, treat all Instagram search destinations as rejected (generic platform search rule applies).
 
-### 11. The Dieline
-- URL: `https://thedieline.com/`
-- Why approved: user explicitly marked it as a good product/branding surface worth keeping in the dashboard.
-- Best use: packaging-led product worlds, CPG/beauty/food/drink systems, adjacent product-led campaign discovery.
+Currently no accounts pre-approved. Add approved accounts to this section as they are confirmed in thread.
 
-## Usage rule
+## Usage rules
 
-Approved does not mean universal.
+1. Approved does not mean universal. Do not force these surfaces into every answer.
 
-Do not force these surfaces into every answer.
-Use them as:
+2. **Layer discipline**: taste-anchors signal tone; target-resource surfaces are where you actually hunt. Do not use a taste-anchor as evidence that a product/commercial brief is satisfied.
 
-- trusted anchors;
-- seed comparisons;
-- evidence that a neighboring surface may be worth exploring.
+3. **Two-surface minimum (visual/commercial mode)**: if fewer than 2 target-resource surfaces returned on-brief signal, state that explicitly. Do not silently pad with taste-anchors to reach a result count.
 
-If a future prompt recommends alternatives, they should be meaningfully better for the current task than these approved anchors.
+4. If a future prompt recommends alternatives, they should be meaningfully better for the current task than these approved anchors.
 
-Important nuance:
-
-- `approved` does not mean “exact-match retrieval surface for every query”
-- some approved anchors are useful neighboring surfaces even when a specific keyword family does not hit cleanly there
+5. `approved` does not mean "exact-match retrieval surface for every query" — some anchors are useful neighboring surfaces even when a specific keyword family does not hit cleanly there.

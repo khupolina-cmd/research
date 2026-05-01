@@ -25,7 +25,7 @@ If you have not touched the relevant local sources in this turn, you are not rea
 Use [references/source-touch-order.md](references/source-touch-order.md) to decide which files to open.
 Use [references/runtime-theses.md](references/runtime-theses.md) to pull only the relevant rules instead of dragging the whole project into the answer.
 Use [references/output-object-routing.md](references/output-object-routing.md) to lock the output object before drafting the prompt.
-Use [references/approved-anchors.md](references/approved-anchors.md) and [references/rejected-surfaces-and-antiqueries.md](references/rejected-surfaces-and-antiqueries.md) as live allow/deny layers when the task is reference hunting.
+Use [references/approved-anchors.md](references/approved-anchors.md) as a two-layer allow surface: **Layer 1 taste-anchors** for tone calibration, **Layer 2 target-resource surfaces** for visual/commercial retrieval. Layer 2 also includes secondary award entry surfaces (D&AD, Red Dot, Epica, Clio) — use with Thesis 18 segment filter. In visual/commercial mode, require at least 2 Layer 2 primary surfaces before finalizing. Use [references/rejected-surfaces-and-antiqueries.md](references/rejected-surfaces-and-antiqueries.md) as the hard deny layer.
 Use [references/prompt-templates.md](references/prompt-templates.md) to choose the right prompt shape instead of improvising the structure from scratch.
 
 ## What to do in a turn
@@ -146,13 +146,30 @@ Before asking any anti-failure questions, lock the output object:
 - do not proceed to anti-failure questions with an undecided output object;
 - if the object is still ambiguous, ask one short discriminative question first.
 
-Then prioritize:
+Then, before any query is formulated, apply Thesis 16 (object class lock):
+
+- lock the exact object class: container + mandatory visible element (e.g. "retail packaging system, typography in frame"), not just "visual reference";
+- lock the segment (mid-market / mass-commercial / premium / luxury);
+- lock the product category (for the brief-back check per Thesis 19);
+- do not write a search query until all three are stated.
+
+Then prioritize anti-failure questions:
 
 1. what obvious junk must be excluded;
 2. what counts as valid proof;
 3. which surfaces are useful or harmful;
 4. whether this should be mapped first or shortlisted now;
 5. only then narrower visual/commercial distinctions if still needed.
+
+For freshness:
+
+- apply Thesis 14 (freshness gate) to all sources;
+- apply Thesis 17 (TinEye / Google Lens first-seen date check) to shortlisted images — page publication date does not guarantee image recency.
+
+For awards used as entry points:
+
+- apply Thesis 18 segment filter — do not use grand prix winners as direct references for mid-market briefs;
+- follow credits from award pages through to The Dieline / Design Week / studio pages — award gallery pages are not the final deliverable.
 
 Do not hide inside luxury-safe examples just because they are easier.
 If the field layer is unclear, default to `map the field` before `shortlist`.

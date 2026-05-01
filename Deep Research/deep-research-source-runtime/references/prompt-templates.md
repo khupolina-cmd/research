@@ -273,3 +273,93 @@ But audit is still useful when:
 - prompts from different runs start converging to the same stale shape;
 - the user suspects the assistant is falling back to memory;
 - the result looks polished but suspiciously generic.
+
+## 4. Visual / Commercial Reference Prompt
+
+Use this when the user wants:
+
+- visual references for a commercial or product brief;
+- trend-forward work examples with editorial and authorship quality;
+- surface or corpus collection in visual/creative/commercial mode.
+
+This template has freshness, source-layer, and quality-floor requirements pre-loaded. Do not remove them.
+
+### Pre-flight check (run before writing the prompt)
+
+- [ ] **Object class locked** — exact object stated (container + mandatory visible element), not just "visual reference" or "branding work" (Thesis 16)
+- [ ] Domain mode declared: visual/commercial
+- [ ] At least 2 target-resource surfaces from Layer 2 of `approved-anchors.md` are in the source list
+- [ ] Freshness constraint active (2024–2026 unless user specifies otherwise)
+- [ ] Style quality floor stated
+- [ ] Segment qualifier stated (mid-market / mass-commercial / premium / luxury) — required before using awards as entry points (Thesis 18)
+- [ ] Product category stated for brief-back check (e.g. "mass-market skincare, pharmacy retail") (Thesis 19)
+
+If any box is unchecked, fix it before writing the prompt body.
+
+### Recommended structure
+
+```text
+Task:
+[one sentence: what visual/commercial object to find]
+
+Object lock:
+[exact object class: container + mandatory visible element, e.g. "retail packaging system, typography visible in frame"]
+[segment: mid-market / mass-commercial / premium / luxury]
+[product category: e.g. "mass-market skincare — pharmacy retail, Eastern European market"]
+
+Goal:
+[decision or use context — what this corpus feeds into]
+
+Primary quality rule:
+Real authored commercial work, published 2024–2026, visible editorial decision in frame.
+Not: templates, AI mocks, self-initiated concepts, Pinterest repins, uncredited aggregates.
+
+Source layer (minimum 2 from target-resource surfaces):
+- [surface 1 from Layer 2 of approved-anchors.md]
+- [surface 2 from Layer 2 of approved-anchors.md]
+- [award entry surface if needed — secondary only, follow credits to primary surfaces; filter by product category and avoid luxury-only winners for mid-market briefs]
+- [taste-anchors if needed for tone calibration only — label them as such]
+
+Freshness gate:
+- Accept: page or work has confirmed 2024–2026 publication or activity date.
+- Verify first-seen date for shortlisted images using TinEye or Google Lens — page date ≠ image creation date.
+- Mark as unverified: date not visible or not confirmable.
+- Reject: last active before 2023 unless user explicitly allows archival material.
+
+Exclude:
+- [from rejected-surfaces-and-antiqueries.md — list relevant ones explicitly]
+- dated-looking work (pre-2022 visual language)
+- template / AI-mock / prompt-marketplace results
+- generic platform search pages as deliverables
+- cross-category references presented as direct analogs without labeling
+
+Style quality floor:
+[state what "current and non-generic" means for this brief, e.g.: "editorial typography visible, not just nice product photo", "2025-era layout logic, not 2015 e-commerce grid"]
+
+What to return:
+1. [primary output object — surfaces / tags / makers / proof pages / cases]
+2. Freshness status per result: confirmed page date + first-seen date check result (TinEye/Google Lens) where applied
+3. Why each result qualifies: object match + authorship + stylistic currency + category match
+4. Category match status: direct (same product category) or cross-category borrowing (label which)
+5. What signal is weak or missing
+
+Anti-surface check:
+- No results from rejected-surfaces-and-antiqueries.md
+- No generic platform search pages substituted for direct resources
+- No taste-anchors substituted for target-resource surfaces in the main deliverable
+- No award gallery pages as final deliverable — use them as entry points only
+```
+
+### Common failure modes for this template
+
+| Failure | Signal | Fix |
+|---------|--------|-----|
+| Object class not locked before query | Query starts with "find visual references for X" — no container, no visible element stated | Apply Thesis 16: lock container + mandatory visible element first |
+| Taste-anchors used as primary deliverable | Awwwards / Cosmos in the main result table | Move to secondary; add Layer 2 surface |
+| Freshness not checked | No dates, vague "recent" language | Force date verification per source |
+| First-seen date skipped | Page date used, image may be pre-2022 | Apply TinEye / Google Lens check to shortlisted images (Thesis 17) |
+| Award winner used directly for mid-market brief | Cannes / D&AD winner shown as direct reference | Filter by segment and category; follow credits to primary surfaces (Thesis 18) |
+| Cross-category reference unlabeled | Beer packaging shown as skincare reference without note | Label as cross-category borrowing; apply brief-back check (Thesis 19) |
+| Object substitution | Asked for sites, returned cases | Re-lock output object, rewrite What to return |
+| Style floor not enforced | Dated-looking or template-like results passed through | Apply Thesis 15 markers explicitly |
+| Behance used as standalone answer | "Search Behance for X" | Demote to secondary corroboration with specific query |

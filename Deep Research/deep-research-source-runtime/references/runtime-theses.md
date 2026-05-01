@@ -177,3 +177,137 @@ Stricter rule:
 - a kept resource surface should itself behave like a repeatable browseable reservoir of the target object;
 - if the fit only becomes visible after hopping through scattered case pages, that is a discovery node, not the requested final resource;
 - discovery nodes may be useful, but they must be labeled as secondary and must not replace the resource table the user asked for.
+
+## 14. Freshness gate for visual / creative / trend tasks
+
+A source is not accepted into the final list for a visual/creative/trend task unless its activity in 2024–2026 is confirmed.
+
+Check for:
+
+- publication date of the specific page or work being cited;
+- evidence that the surface itself is actively updated (recent posts, dated entries, current campaign coverage).
+
+If the date cannot be verified:
+
+- mark the source as `unverified for freshness`;
+- move it to a secondary layer, not the main deliverable;
+- do not silently include it as if it were current.
+
+Do not satisfy a freshness requirement by citing the domain name only. A surface that was strong in 2020 but has not been updated since is not a current source.
+
+## 15. Positive specification for on-brief visual/commercial work
+
+Thesis 6 says what to reject. This thesis says what to accept.
+
+A result qualifies as on-brief for a visual/commercial reference task if it shows:
+
+- **Visible editorial decision**: composition, type treatment, color, or cropping that is clearly authored, not templated or AI-mocked;
+- **Real client + real brief**: not a self-initiated studio concept, not a student project, not a spec piece, unless the user explicitly said those are acceptable;
+- **Published on a professional surface**: not a Pinterest repin, not a mood board aggregate, not an uncredited stock collection;
+- **If product visual**: typography or compositional structure must be visible in frame — not just attractive product photography without design intent;
+- **Stylistic currency**: the work should read as 2023–2026 in visual language; work that reads as dated e-commerce, 2015-era collage, or generic luxury safe is not on-brief even if the object class is correct.
+
+A result that satisfies object class but fails on authorship, publication provenance, or stylistic currency is a partial match at best. Label it as such; do not present it as a full hit.
+
+## 16. Object class lock is a precondition, not decoration
+
+Before any visual/commercial query is formulated, the object class must be stated precisely.
+
+What counts as a locked object class:
+
+- specific enough that a wrong result would be visibly wrong, not just aesthetically off;
+- includes the container or medium (e.g. "retail packaging system", "outdoor poster", "shelf-ready label", "brand identity applied to packaging");
+- includes any mandatory visible element (e.g. "typography visible in frame", "product + context in single shot", "label in use not flat lay");
+- is stated before the first query, not inferred post-hoc from whatever surfaced.
+
+What is not a locked object class:
+
+- "visual reference" — too open;
+- "branding work" — still open;
+- "commercial photography" — wrong axis;
+- "inspiration" — not an object class at all.
+
+If the object class shifts during search (e.g. discovering packaging work is more relevant than posters for a given brief), re-lock before continuing. Do not post-hoc fit a found result into an object class it does not match.
+
+This is a gate, not a guideline. No search query should be formulated until the object class is locked.
+
+## 17. First-seen date verification via reverse image search
+
+Publication date on a source page ≠ creation date of the work ≠ first-seen date of the image.
+
+A page published in 2025 may display work from 2018. The page date does not make the work current.
+
+For key shortlisted visual references, use TinEye (`tineye.com`) or Google Lens to check the first-seen date of the specific image:
+
+- TinEye shows earliest indexed occurrence across the web;
+- Google Lens shows visually similar indexed pages with dates.
+
+First-seen check is most critical for:
+
+- award round-ups and "best of" aggregates (a 2024 article may be celebrating 2021 work);
+- portfolio pages that show mixed-year projects without per-project dates;
+- social media reposts of older work;
+- aggregator pages where publication date reflects curation date, not work date.
+
+If first-seen date shows the image is pre-2022, mark as archival regardless of publication context. Do not promote it as a current reference unless the user explicitly allows archival material.
+
+This is a verification step, not a search step. Apply it to shortlisted candidates, not to the full initial corpus. Time cost is low; ambiguity cost of skipping it is high.
+
+## 18. Awards as segment-filtered annual entry points
+
+D&AD, Red Dot, Cannes Lions, Clio, and Epica announce winners annually. The announcement date is a hard freshness anchor: winners are verified, dated, real-client commercial work.
+
+Awards are useful as:
+
+- entry points into verified current-year commercial work with known client, studio, and date;
+- vocabulary anchors showing what categories and subcategories exist in the field this year;
+- direction checks showing what is winning now vs. three years ago.
+
+Awards are not useful without segment filtering:
+
+- **Award shortlists skew heavily toward luxury, prestige, and global brands.** Mid-market commercial work rarely wins grand prix honors — it appears in regional awards and shortlists, not in the headline results.
+- Using an award winner directly as a reference for a mid-market brief produces the wrong ambition level and the wrong budget signal.
+- The visual language of global award winners (Nike, Apple, LVMH-tier) often does not transfer to mid-market consumer goods at all — it can actively mislead the brief.
+
+Segment filter rule:
+
+- For mid-market briefs: prefer D&AD shortlists over D&AD winners; prefer Epica or Clio over Cannes Lions grand prix; prefer regional country awards over global shows.
+- Filter by product category within the award (e.g., Food & Drink, Health & Beauty, Household Products) rather than treating all winning work as equally relevant.
+- After finding an entry via an award page, follow credits through to the studio/agency page and The Dieline / Design Week coverage — that is where the actual reference material lives.
+
+Award entry surfaces approved for this project (secondary Layer 2 use only):
+
+| Surface | URL | Segment caveat |
+|---------|-----|----------------|
+| D&AD Professional Awards | `https://www.dandad.org/en/d-ad-professional-awards/` | Luxury skew at winner level; shortlists show wider range |
+| Red Dot (Communication Design) | `https://www.red-dot.org/project/` | Filter by category; wider segment range than D&AD |
+| Epica Awards | `https://www.epica-awards.com/` | European-weighted; stronger mid-market representation |
+| Clio Awards | `https://clios.com/awards/` | US/global; wider segment range than Cannes |
+
+Use awards as entry points, then trace credits to primary surfaces. Do not use award gallery pages as the final deliverable.
+
+## 19. Product category brief-back check
+
+Object class lock (Thesis 16) ensures the right format. Category brief-back checks that the reference also matches the product territory.
+
+A beer packaging reference is not a valid reference for a skincare brief even if:
+
+- both are CPG;
+- both are mid-market;
+- both show good typography;
+- both are current (2024–2026).
+
+Category proximity matters for:
+
+- packaging shape conventions (bottle vs. jar vs. tube vs. pouch);
+- shelf context (pharmacy shelf ≠ supermarket chilled section ≠ specialty retailer);
+- label density expectations (pharmaceutical vs. food vs. beauty differ radically);
+- color language conventions by category (pharma blues, beauty golds, food freshness greens).
+
+Before accepting a reference into a shortlist:
+
+1. State the product category of the brief (e.g., "mid-market skincare — mass pharmacy retail, Eastern European market");
+2. Check whether the found reference matches that category or is merely adjacent;
+3. Adjacent-but-not-matching references may be useful as tone references but must be labeled as cross-category borrowings, not direct analogs.
+
+A result that is correct object class + correct style period + wrong product category is a secondary reference, not a primary hit. Label it as such.
