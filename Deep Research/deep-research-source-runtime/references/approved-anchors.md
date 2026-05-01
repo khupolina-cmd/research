@@ -39,6 +39,19 @@ In visual/commercial mode, do not deliver a final result unless at least 2 on-br
 | 6 | Packaging Digest | `https://www.packagingdigest.com/` | CPG/product statics, packaging trends, industry-facing coverage | Secondary: for CPG/FMCG briefs specifically |
 | 7 | Behance (query-constrained only) | `https://www.behance.net/` | Corroboration of surface hits, vocabulary drift check, studio discovery when query is tight | Secondary: never use as a standalone answer; always pair with specific query |
 
+### Award entry surfaces (secondary only)
+
+Use as dated entry points into verified current-year commercial work. Always follow credits through to primary Layer 2 surfaces (The Dieline, Design Week, studio pages) — do not use award gallery pages as the final deliverable.
+
+**Segment caveat applies**: award shortlists skew heavily toward luxury and prestige brands. For mid-market briefs, filter by product category within the award and prefer shortlists over grand prix winners. See Thesis 18 for the full rule.
+
+| # | Surface | URL | Segment caveat |
+|---|---------|-----|----------------|
+| A1 | D&AD Professional Awards | `https://www.dandad.org/en/d-ad-professional-awards/` | Luxury skew at winner level; shortlists show wider commercial range |
+| A2 | Red Dot (Communication Design) | `https://www.red-dot.org/project/` | Filter by category; wider segment range than D&AD |
+| A3 | Epica Awards | `https://www.epica-awards.com/` | European-weighted; stronger mid-market representation |
+| A4 | Clio Awards | `https://clios.com/awards/` | US/global; wider segment range than Cannes Lions |
+
 ### Instagram publisher nodes
 
 Use these as publisher nodes, not as platform search. Do not substitute with "search Instagram for X."
