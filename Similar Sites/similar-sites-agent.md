@@ -57,6 +57,20 @@ Produce a source profile using this schema:
 }
 ```
 
+If content_type is `portfolio`, also produce a `visual_profile` block:
+
+```json
+"visual_profile": {
+  "photography_genre": "fashion | editorial | commercial | portrait | documentary | architectural | product | street | fine-art | wedding | other",
+  "mood": "moody/dark | bright/airy | clean/minimalist | dramatic | cinematic | raw | other",
+  "color_treatment": "warm | cool | neutral | desaturated | high-contrast | film-emulation | other",
+  "aesthetic_currency": "current (2022+) | recent (2018–2021) | dated (pre-2018)",
+  "style_tags": ["tag1", "tag2", "tag3"]
+}
+```
+
+Derive `visual_profile` from displayed work — gallery thumbnails, project headers, visible stylistic descriptors. If images are not accessible, note this and estimate from page copy and project titles.
+
 Show the source profile to the user before proceeding.
 If anything is ambiguous, ask one short clarifying question before building search queries.
 
@@ -65,6 +79,11 @@ If anything is ambiguous, ask one short clarifying question before building sear
 Generate 3-5 targeted queries from the source profile.
 Queries must be designed to surface same-type, same-topic sites.
 Avoid queries likely to return aggregators, Wikipedia, Reddit, or major social platforms.
+
+For portfolio sites, include style-anchored queries using `visual_profile` data:
+- `"<photography_genre> photographer portfolio <mood> aesthetic"`
+- `"<photography_genre> photography <style_tag1> <style_tag2> portfolio site"`
+- `"<photography_genre> photographer portfolio 2023 OR 2024 OR 2025"`
 
 Show the query list to the user before running the search.
 
@@ -86,6 +105,25 @@ passes = (|source.quality_score - candidate.quality_score| <= 2)
 Discard any candidate where `passes = False`.
 Do not adjust the tolerance silently to inflate the result count.
 
+For portfolio sites, also apply a visual genre filter after quality matching:
+
+```
+GENRE_FAMILIES = [
+  {fashion, editorial},
+  {documentary, street},
+  {architectural, product},
+  {portrait, fine-art},
+  {commercial, advertising},
+]
+
+genre_matches = (source.genre == candidate.genre)
+                OR (both genres share a GENRE_FAMILY)
+
+Discard any portfolio candidate where genre_matches = False.
+```
+
+A portrait photographer does not match a fashion portfolio, even at equal quality scores.
+
 ### 6. Rank
 
 Rank passing candidates by semantic similarity to the source:
@@ -93,6 +131,12 @@ Rank passing candidates by semantic similarity to the source:
 2. shared search keyword count;
 3. same `content_type`;
 4. closer `quality_score` value.
+
+For portfolio sites, additionally rank by visual style proximity:
+1. `style_tags` overlap (shared tags between source and candidate);
+2. matching `mood`;
+3. matching `color_treatment`;
+4. prefer `aesthetic_currency: current (2022+)` over `recent` or `dated`.
 
 ### 7. Output
 
@@ -123,17 +167,39 @@ The quality filter is the core differentiator of this skill.
 
 A site scoring 4 is not a valid match for a site scoring 8, even if the topics are identical.
 
+## Visual matching criteria (portfolio sites only)
+
+For `content_type: portfolio`, a second hard filter applies — genre must match:
+
+**Genre families (compatible genres):**
+
+| Family | Genres |
+|---|---|
+| Fashion / editorial | fashion, editorial |
+| Street / documentary | street, documentary |
+| Architecture / product | architectural, product |
+| Portrait / fine-art | portrait, fine-art |
+| Commercial / advertising | commercial, advertising |
+
+A portfolio that passes quality matching but whose genre does not share a family with the source is rejected.
+
+After filtering, portfolio candidates are additionally ranked by:
+1. `style_tags` overlap;
+2. matching `mood`;
+3. matching `color_treatment`;
+4. `aesthetic_currency` — prefer `current (2022+)` over `recent` or `dated`.
+
 ## Output format
 
 Use `similar-sites-output-template.md` as the exact format.
 
 Summary of required sections:
 
-- **Source Site** — topic, content type, quality score, audience level
-- **Similar Sites Found** — top 5 (or fewer), each with URL, why similar, quality score, topic match, audience level
+- **Source Site** — topic, content type, quality score, audience level; for portfolios also visual profile (genre, mood, color treatment, aesthetic currency, style tags)
+- **Similar Sites Found** — top 5 (or fewer), each with URL, why similar, quality score, topic match, audience level; for portfolios also genre and visual style
 - **Search Methodology** — queries used, candidate count, pass rate, notable rejects
 
-"Why similar" must reference content, quality evidence, and audience — not just topic.
+"Why similar" must reference content, quality evidence, and audience — not just topic. For portfolio results it must also reference genre, mood/color treatment, and aesthetic currency.
 
 ## Examples
 

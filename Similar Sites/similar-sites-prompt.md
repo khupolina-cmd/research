@@ -38,6 +38,20 @@ Produce a JSON profile using this schema exactly:
   "search_keywords": ["keyword1", "keyword2", "keyword3"]
 }
 
+If content_type is "portfolio", also produce a visual_profile block:
+
+{
+  "visual_profile": {
+    "photography_genre": "fashion | editorial | commercial | portrait | documentary | architectural | product | street | fine-art | wedding | other",
+    "mood": "moody/dark | bright/airy | clean/minimalist | dramatic | cinematic | raw | other",
+    "color_treatment": "warm | cool | neutral | desaturated | high-contrast | film-emulation | other",
+    "aesthetic_currency": "current (2022+) | recent (2018–2021) | dated (pre-2018)",
+    "style_tags": ["tag1", "tag2", "tag3"]
+  }
+}
+
+Derive visual_profile from the work displayed on the site — look at image thumbnails, gallery sections, project headers, and any visible stylistic descriptors. If images are not accessible, note this and estimate conservatively based on page copy and project titles.
+
 Quality score rubric (use as a guide, not as a rigid checklist):
 - 9-10: primary research, deep expert analysis, original data, peer-level sourcing;
 - 7-8: well-structured expert writing, cited sources, substantive depth;
@@ -62,6 +76,11 @@ Good query construction patterns:
 - "best <content_type> <topic>"
 - "<keyword1> <keyword2> resources OR journal OR magazine"
 
+For portfolio sites with a visual_profile, add style-anchored queries:
+- "<photography_genre> photographer portfolio <mood> aesthetic"
+- "<photography_genre> photography <style_tag1> <style_tag2> portfolio site"
+- "<photography_genre> photographer portfolio 2023 OR 2024 OR 2025"  (to surface current work)
+
 Avoid:
 - queries that return Wikipedia, Reddit, or social media as primary results;
 - queries that are too broad ("websites about space");
@@ -82,7 +101,7 @@ For each candidate, repeat Step 1 and Step 2 (scrape + analyze).
 If scraping is not possible, estimate conservatively — do not assume high quality.
 Produce a JSON profile for each candidate.
 
-Step 6 — Filter by quality match.
+Step 6 — Filter by quality match and (for portfolios) visual genre match.
 
 Apply the quality_matches function:
 
@@ -93,7 +112,24 @@ Apply the quality_matches function:
 Default tolerance = 2. Use 1 if the user wants stricter matching.
 Discard any candidate where passes = False.
 
-If fewer than 5 candidates pass, do not pad with rejects. Return what passed and note the gap.
+For portfolio sites, also apply visual_matches after quality_matches:
+
+  GENRE_FAMILIES = [
+    {fashion, editorial},
+    {documentary, street},
+    {architectural, product},
+    {portrait, fine-art},
+    {commercial, advertising},
+  ]
+
+  genre_matches = (source.genre == candidate.genre)
+                  OR (both genres belong to the same GENRE_FAMILY)
+
+  Discard any portfolio candidate where genre_matches = False.
+
+A technically excellent portrait photographer is not a valid match for a fashion portfolio, even if both score 9/10.
+
+If fewer than 5 candidates pass all filters, do not pad with rejects. Return what passed and note the gap.
 
 Step 7 — Rank survivors.
 
@@ -104,6 +140,14 @@ If not available, rank by:
 2. same content_type (exact match preferred);
 3. same quality_score value (closer = higher rank).
 
+For portfolio sites, additionally rank by visual style proximity:
+1. style_tags overlap (count of shared tags between source and candidate);
+2. matching mood;
+3. matching color_treatment;
+4. prefer aesthetic_currency "current (2022+)" over "recent (2018–2021)" over "dated (pre-2018)".
+
+Visual style proximity is a secondary ranking signal — it refines order among quality-matched candidates but does not override the quality filter.
+
 Step 8 — Output.
 
 Use the template in `similar-sites-output-template.md`.
@@ -113,6 +157,11 @@ For each result, write a clear "Why similar" explanation that mentions:
 - what the content covers;
 - what the quality level looks like in practice;
 - why it matches the source and not just the topic.
+
+For portfolio results, the "Why similar" must also mention:
+- the photography genre and how it matches or overlaps the source genre;
+- the visual mood and color treatment;
+- whether the aesthetic feels current or dated (aesthetic_currency).
 
 Include a Search Methodology section describing:
 - the queries used;

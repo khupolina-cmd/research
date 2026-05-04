@@ -61,6 +61,40 @@ def quality_matches(source, candidate, tolerance=2):
 
 Both conditions must pass. A site that is close in score but targets a different audience level is rejected.
 
+## Visual matching rule (portfolio sites only)
+
+When `content_type == "portfolio"`, an additional filter applies after quality matching:
+
+```python
+GENRE_FAMILIES = [
+    {"fashion", "editorial"},
+    {"documentary", "street"},
+    {"architectural", "product"},
+    {"portrait", "fine-art"},
+    {"commercial", "advertising"},
+]
+
+def genre_matches(source_genre, candidate_genre):
+    if source_genre == candidate_genre:
+        return True
+    for family in GENRE_FAMILIES:
+        if source_genre in family and candidate_genre in family:
+            return True
+    return False
+
+def visual_matches(source, candidate):
+    return genre_matches(source.visual_profile.photography_genre,
+                         candidate.visual_profile.photography_genre)
+```
+
+A portfolio candidate that passes quality matching but fails `visual_matches` is rejected.
+
+After filtering, portfolio candidates are ranked by style proximity:
+1. `style_tags` overlap (count of shared tags);
+2. matching `mood`;
+3. matching `color_treatment`;
+4. prefer `aesthetic_currency: current (2022+)` over `recent` or `dated`.
+
 ## Site analysis schema
 
 ```json
@@ -71,6 +105,18 @@ Both conditions must pass. A site that is close in score but targets a different
   "quality_markers": ["deep explanations", "expert tone", "original research", "..."],
   "audience_level": "beginner | intermediate | expert",
   "search_keywords": ["keyword1", "keyword2", "keyword3"]
+}
+```
+
+For `content_type: portfolio`, also populate a `visual_profile` block:
+
+```json
+"visual_profile": {
+  "photography_genre": "fashion | editorial | commercial | portrait | documentary | architectural | product | street | fine-art | wedding | ...",
+  "mood": "moody/dark | bright/airy | clean/minimalist | dramatic | cinematic | raw | ...",
+  "color_treatment": "warm | cool | neutral | desaturated | high-contrast | film-emulation | ...",
+  "aesthetic_currency": "current (2022+) | recent (2018–2021) | dated (pre-2018)",
+  "style_tags": ["tag1", "tag2", "tag3"]
 }
 ```
 
