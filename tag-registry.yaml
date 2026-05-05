@@ -1,0 +1,673 @@
+# ============================================================
+# TAG REGISTRY — Единый реестр канонических тегов
+# ============================================================
+# Принцип: у каждого понятия один canonical тег + aliases.
+# При индексации и поиске всё приводится к canonical виду.
+# Чтобы добавить синоним — добавь его в aliases, НЕ создавай новый тег.
+# ============================================================
+
+# ─── ЭЛЕМЕНТЫ / MATERIALS ───────────────────────────────────
+
+water:
+  canonical: "water"
+  category: "element"
+  aliases:
+    - вода
+    - брызги
+    - струя
+    - капли
+    - жидкость
+    - поток
+    - splash
+    - drops
+    - liquid
+    - stream
+    - droplets
+    - spray
+    - wave
+    - волна
+    - aqua
+
+fire:
+  canonical: "fire"
+  category: "element"
+  aliases:
+    - огонь
+    - пламя
+    - flame
+    - flames
+    - blaze
+    - spark
+    - искра
+
+smoke:
+  canonical: "smoke"
+  category: "element"
+  aliases:
+    - дым
+    - туман
+    - fog
+    - mist
+    - haze
+    - дымка
+
+ice:
+  canonical: "ice"
+  category: "element"
+  aliases:
+    - лёд
+    - лед
+    - frost
+    - frozen
+    - иней
+    - кристаллы льда
+    - iceberg
+
+glass:
+  canonical: "glass"
+  category: "material"
+  aliases:
+    - стекло
+    - стеклянный
+    - glassy
+    - transparent
+    - прозрачный
+
+marble:
+  canonical: "marble"
+  category: "material"
+  aliases:
+    - мрамор
+    - мраморный
+    - marble texture
+    - stone surface
+    - каменная поверхность
+
+metal:
+  canonical: "metal"
+  category: "material"
+  aliases:
+    - металл
+    - metallic
+    - steel
+    - сталь
+    - chrome
+    - хром
+    - iron
+    - железо
+    - aluminium
+    - алюминий
+
+fabric:
+  canonical: "fabric"
+  category: "material"
+  aliases:
+    - ткань
+    - textile
+    - cloth
+    - linen
+    - льняной
+    - silk
+    - шёлк
+    - velvet
+    - бархат
+
+wood:
+  canonical: "wood"
+  category: "material"
+  aliases:
+    - дерево
+    - деревянный
+    - wooden
+    - timber
+    - oak
+    - дуб
+
+concrete:
+  canonical: "concrete"
+  category: "material"
+  aliases:
+    - бетон
+    - cement
+    - цемент
+    - concrete surface
+
+sand:
+  canonical: "sand"
+  category: "material"
+  aliases:
+    - песок
+    - sandy
+    - desert
+    - пустыня
+    - пляж
+    - beach
+
+# ─── ОСВЕЩЕНИЕ / LIGHTING ────────────────────────────────────
+
+backlight:
+  canonical: "backlight"
+  category: "lighting"
+  aliases:
+    - контровый свет
+    - подсветка сзади
+    - rim light
+    - back lit
+    - backlighting
+    - контровый
+    - contre-jour
+
+studio_light:
+  canonical: "studio_light"
+  category: "lighting"
+  aliases:
+    - студийный свет
+    - softbox
+    - студийное освещение
+    - artificial light
+    - искусственный свет
+    - diffused light
+    - рассеянный свет
+
+natural_light:
+  canonical: "natural_light"
+  category: "lighting"
+  aliases:
+    - естественный свет
+    - дневной свет
+    - natural lighting
+    - daylight
+    - window light
+    - свет из окна
+
+golden_hour:
+  canonical: "golden_hour"
+  category: "lighting"
+  aliases:
+    - золотой час
+    - golden light
+    - warm sunlight
+    - sunset light
+    - sunrise light
+    - тёплый свет
+    - закатный свет
+
+harsh_light:
+  canonical: "harsh_light"
+  category: "lighting"
+  aliases:
+    - жёсткий свет
+    - hard light
+    - direct sun
+    - прямой свет
+    - резкие тени
+
+shadow:
+  canonical: "shadow"
+  category: "lighting"
+  aliases:
+    - тень
+    - тени
+    - shadows
+    - dark shadows
+    - moody shadows
+
+# ─── ЦВЕТ / COLOR ────────────────────────────────────────────
+
+warm_tone:
+  canonical: "warm_tone"
+  category: "color"
+  aliases:
+    - тёплые тона
+    - warm colors
+    - warm palette
+    - оранжевый тон
+    - оранжевый
+    - рыжий
+    - amber
+    - golden
+    - земляной
+
+cold_tone:
+  canonical: "cold_tone"
+  category: "color"
+  aliases:
+    - холодные тона
+    - cold colors
+    - cool palette
+    - blue tone
+    - синий тон
+    - голубой
+    - icy tone
+
+neutral_tone:
+  canonical: "neutral_tone"
+  category: "color"
+  aliases:
+    - нейтральный
+    - neutral
+    - beige
+    - бежевый
+    - greige
+    - серый
+    - gray
+    - grey
+    - white
+    - белый
+    - cream
+
+monochrome:
+  canonical: "monochrome"
+  category: "color"
+  aliases:
+    - монохром
+    - монохромный
+    - black and white
+    - ч/б
+    - grayscale
+    - desaturated
+    - achromatic
+
+vibrant:
+  canonical: "vibrant"
+  category: "color"
+  aliases:
+    - яркий
+    - bright colors
+    - saturated
+    - насыщенный
+    - colorful
+    - красочный
+    - vivid
+
+pastel:
+  canonical: "pastel"
+  category: "color"
+  aliases:
+    - пастельный
+    - pastel colors
+    - muted colors
+    - soft colors
+    - нежный
+    - gentle palette
+
+dark_tone:
+  canonical: "dark_tone"
+  category: "color"
+  aliases:
+    - тёмный
+    - dark
+    - dark background
+    - dark mood
+    - moody dark
+    - low key
+    - чёрный фон
+
+light_tone:
+  canonical: "light_tone"
+  category: "color"
+  aliases:
+    - светлый
+    - light background
+    - white background
+    - белый фон
+    - high key
+    - airy
+
+# ─── КОМПОЗИЦИЯ / COMPOSITION ────────────────────────────────
+
+rule_of_thirds:
+  canonical: "rule_of_thirds"
+  category: "composition"
+  aliases:
+    - правило третей
+    - rule of thirds
+    - thirds composition
+    - правило 3/3
+
+center_composition:
+  canonical: "center_composition"
+  category: "composition"
+  aliases:
+    - центральная композиция
+    - centered
+    - center frame
+    - symmetry
+    - симметрия
+    - по центру
+
+minimal_composition:
+  canonical: "minimal_composition"
+  category: "composition"
+  aliases:
+    - минимализм
+    - minimal
+    - minimalist
+    - minimalistic
+    - clean
+    - negative space
+    - воздух в кадре
+
+flat_lay:
+  canonical: "flat_lay"
+  category: "composition"
+  aliases:
+    - флэтлей
+    - flat lay
+    - flatlay
+    - top view
+    - вид сверху
+    - overhead shot
+    - bird view
+
+close_up:
+  canonical: "close_up"
+  category: "composition"
+  aliases:
+    - крупный план
+    - close up
+    - closeup
+    - detail shot
+    - деталь
+    - macro
+    - макро
+
+diagonal:
+  canonical: "diagonal"
+  category: "composition"
+  aliases:
+    - диагональ
+    - diagonal composition
+    - diagonal lines
+    - leading lines
+
+# ─── ФОРМАТ / FORMAT ─────────────────────────────────────────
+
+vertical:
+  canonical: "vertical"
+  category: "format"
+  aliases:
+    - вертикальный
+    - portrait orientation
+    - portrait format
+    - 9:16
+    - 4:5
+
+horizontal:
+  canonical: "horizontal"
+  category: "format"
+  aliases:
+    - горизонтальный
+    - landscape orientation
+    - landscape format
+    - 16:9
+
+square:
+  canonical: "square"
+  category: "format"
+  aliases:
+    - квадрат
+    - квадратный
+    - 1:1
+    - square format
+
+# ─── СТИЛЬ / STYLE ───────────────────────────────────────────
+
+product_photo:
+  canonical: "product_photo"
+  category: "style"
+  aliases:
+    - предметная съёмка
+    - product photography
+    - commercial photo
+    - реклама продукта
+    - packshot
+    - product shot
+    - still life
+
+lifestyle:
+  canonical: "lifestyle"
+  category: "style"
+  aliases:
+    - лайфстайл
+    - lifestyle photo
+    - in use
+    - context shot
+    - в жизни
+    - в интерьере
+
+editorial:
+  canonical: "editorial"
+  category: "style"
+  aliases:
+    - эдиториал
+    - editorial photo
+    - magazine style
+    - журнальный стиль
+    - fashion editorial
+
+abstract:
+  canonical: "abstract"
+  category: "style"
+  aliases:
+    - абстракция
+    - abstract photo
+    - abstract art
+    - texture photo
+    - текстура
+
+portrait:
+  canonical: "portrait"
+  category: "style"
+  aliases:
+    - портрет
+    - portrait photo
+    - face photo
+    - headshot
+    - лицо
+
+# ─── НАСТРОЕНИЕ / MOOD ───────────────────────────────────────
+
+calm_mood:
+  canonical: "calm_mood"
+  category: "mood"
+  aliases:
+    - спокойное
+    - calm
+    - peaceful
+    - serene
+    - тихое
+    - умиротворение
+    - тишина
+
+energetic_mood:
+  canonical: "energetic_mood"
+  category: "mood"
+  aliases:
+    - энергичное
+    - energetic
+    - dynamic
+    - динамика
+    - активный
+    - движение
+    - motion
+
+dramatic_mood:
+  canonical: "dramatic_mood"
+  category: "mood"
+  aliases:
+    - драматичное
+    - dramatic
+    - intense
+    - интенсивный
+    - мощный
+    - powerful
+
+soft_mood:
+  canonical: "soft_mood"
+  category: "mood"
+  aliases:
+    - мягкое
+    - soft
+    - gentle
+    - нежное
+    - лёгкое
+    - airy mood
+    - dreamy
+    - воздушное
+
+dark_mood:
+  canonical: "dark_mood"
+  category: "mood"
+  aliases:
+    - тёмное настроение
+    - dark mood
+    - moody
+    - мрачное
+    - глубокое
+    - mysterious
+    - загадочное
+
+fresh_mood:
+  canonical: "fresh_mood"
+  category: "mood"
+  aliases:
+    - свежесть
+    - fresh
+    - clean feeling
+    - cool feeling
+    - чистота
+    - purity
+    - refreshing
+
+# ─── ОБЪЕКТЫ / OBJECTS ──────────────────────────────────────
+
+bottle:
+  canonical: "bottle"
+  category: "object"
+  aliases:
+    - бутылка
+    - флакон
+    - flask
+    - jar
+    - банка
+    - container
+    - упаковка
+    - packaging
+
+flower:
+  canonical: "flower"
+  category: "object"
+  aliases:
+    - цветок
+    - цветы
+    - flowers
+    - blossom
+    - bloom
+    - floral
+    - petals
+    - лепестки
+    - букет
+    - bouquet
+
+leaf:
+  canonical: "leaf"
+  category: "object"
+  aliases:
+    - лист
+    - листья
+    - leaves
+    - foliage
+    - green leaves
+    - plant
+    - растение
+    - herbs
+    - трава
+
+fruit:
+  canonical: "fruit"
+  category: "object"
+  aliases:
+    - фрукт
+    - фрукты
+    - fruits
+    - berries
+    - ягоды
+    - citrus
+    - цитрус
+    - lemon
+    - лимон
+    - orange
+    - апельсин
+
+food:
+  canonical: "food"
+  category: "object"
+  aliases:
+    - еда
+    - food
+    - dish
+    - блюдо
+    - meal
+    - snack
+    - ingredient
+    - ингредиент
+
+cosmetics:
+  canonical: "cosmetics"
+  category: "object"
+  aliases:
+    - косметика
+    - skincare
+    - beauty product
+    - cream
+    - крем
+    - serum
+    - сыворотка
+    - perfume
+    - духи
+
+# ─── ФОН / BACKGROUND ───────────────────────────────────────
+
+white_background:
+  canonical: "white_background"
+  category: "background"
+  aliases:
+    - белый фон
+    - white bg
+    - clean background
+    - studio background
+    - чистый фон
+
+dark_background:
+  canonical: "dark_background"
+  category: "background"
+  aliases:
+    - тёмный фон
+    - black background
+    - чёрный фон
+    - dark bg
+    - low key background
+
+nature_background:
+  canonical: "nature_background"
+  category: "background"
+  aliases:
+    - природный фон
+    - outdoor background
+    - nature bg
+    - green background
+    - зелёный фон
+    - лес
+    - forest
+
+interior_background:
+  canonical: "interior_background"
+  category: "background"
+  aliases:
+    - интерьер
+    - interior
+    - room background
+    - home
+    - дом
+    - home setting
